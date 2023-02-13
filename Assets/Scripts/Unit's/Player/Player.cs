@@ -4,8 +4,10 @@ using UnityEngine;
 public class Player : Unit
 {
     [SerializeField] private PlayerData _data;
+    [SerializeField] private Transform _weaponHandler;
 
     public PlayerData Data => _data;
+    public Transform WeaponHandler => _weaponHandler;
 
     public override void UnitInit()
     {

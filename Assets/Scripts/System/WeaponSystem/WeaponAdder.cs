@@ -7,17 +7,19 @@ public class WeaponAdder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.GetComponent<Player>() != null)
+        if(other.TryGetComponent(out PlayerWeaponControl player))
         {
-            SetWeapon(other.transform);
+            SetUpWeapon(player.transform, player);
         }
     }
 
 
 
-    public void SetWeapon(Transform attachTarget)
+    public void SetUpWeapon(Transform attachTarget, PlayerWeaponControl weaponControlTarget)
     {
         var weapon = Instantiate(_weaponPrefabToSet, attachTarget.position, Quaternion.identity,  attachTarget);
         _weaponPrefabToSet.SetActive(true);
+
+        weaponControlTarget.AddWeapon(weapon.GetComponent<BaseWeapon>());
     }
 }

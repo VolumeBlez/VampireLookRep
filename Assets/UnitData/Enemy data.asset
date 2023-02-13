@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy data
   m_EditorClassIdentifier: 
   _attackDamage: 1
-  _walkSpeed: 2
-  _maxHealth: 14
+  _walkSpeed: 1
+  _maxHealth: 100
