@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Health
 {
-    public Action OnHealthChanged;
+    public Action<float> OnHealthChanged;
 
     public Health(float maxHealth)
     {
@@ -18,12 +18,14 @@ public class Health
         set
         {
             _currentHealth = Mathf.Clamp(value, 0f, _maxHealth);
-            OnHealthChanged?.Invoke();
+            OnHealthChanged?.Invoke(_currentHealth);
         }
     }
 
     private float _maxHealth;
     private float _currentHealth;
+
+    public float MaxHealth => _maxHealth;
 
     public void Heal(float value)
     {

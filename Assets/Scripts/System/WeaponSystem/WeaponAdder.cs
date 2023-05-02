@@ -10,6 +10,7 @@ public class WeaponAdder : MonoBehaviour
         if(other.TryGetComponent(out PlayerWeaponControl player))
         {
             SetUpWeapon(player.transform, player);
+            Destroy(gameObject);
         }
     }
 

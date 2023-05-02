@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ca7263438c8d04db65c76d87cc752c, type: 3}
   m_Name: Player data
   m_EditorClassIdentifier: 
+  _luck: 0
   _startAttackDamage: 15
-  _startWalkSpeed: 3
+  _startWalkSpeed: 4
   _maxHealth: 150
-  luck: 1

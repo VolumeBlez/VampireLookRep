@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 133385931241306499}
   - component: {fileID: 133385931241306498}
   - component: {fileID: 7790964089487878845}
+  - component: {fileID: 7085477479381907957}
   - component: {fileID: 133385931241306497}
   - component: {fileID: 2390322199609315963}
   m_Layer: 7
@@ -102,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: ce7e1f343885f03478a3e2ac546f5294, type: 2}
+  _showUp: {fileID: 7085477479381907957}
 --- !u!114 &133385931241306498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +131,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyControl: {fileID: 133385931241306498}
   _enemyUnit: {fileID: 133385931241306499}
+--- !u!114 &7085477479381907957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133385931241306496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca6c0bcc6156d04691d873d33571985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageColor: {r: 1, g: 0, b: 0, a: 1}
+  _spriteRend: {fileID: 132716153}
 --- !u!50 &133385931241306497
 Rigidbody2D:
   serializedVersion: 4

@@ -3,17 +3,16 @@ using UnityEngine;
 
 public class GameLoader : MonoBehaviour
 {
-    [SerializeField] private GameObject playerPref;
-    [SerializeField] private GameObject enemyPref;
+    [SerializeField] private GameObject player;
+    [SerializeField] private EnemySpawner _spawner;
     
     private void Awake() 
     {
-        playerPref.GetComponent<Player>().UnitInit();
+        player.GetComponent<Player>().UnitInit();
     }
 
     private void Start() 
     {
-        var enemy = Instantiate(enemyPref, Vector2.zero, Quaternion.identity);
-        enemy.GetComponent<EnemyLoader>().EnemyInit(playerPref.transform);
+        _spawner.Init(player.transform);
     }
 }
