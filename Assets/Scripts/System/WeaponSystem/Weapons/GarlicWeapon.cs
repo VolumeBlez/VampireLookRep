@@ -12,10 +12,16 @@ public class GarlicWeapon : BaseWeapon
         {
             if(enemy.TryGetComponent(out Enemy enemyUnit))
             {
-                enemyUnit._unitHealth.TakeDamage(10f);
+                enemyUnit._unitHealth.TakeDamage(Damage);
                 Debug.Log(enemyUnit._unitHealth.CurrentHealth);
             }
         }
+    }
+
+    public override void UpgradeWeapon(BaseWeapon weapon, float upgradeDamagePoints)
+    {
+        base.UpgradeWeapon(weapon, upgradeDamagePoints);
+        Destroy(weapon.gameObject);
     }
 
 }

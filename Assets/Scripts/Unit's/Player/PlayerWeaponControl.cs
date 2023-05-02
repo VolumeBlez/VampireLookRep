@@ -9,6 +9,15 @@ public class PlayerWeaponControl : MonoBehaviour
 
     public void AddWeapon(BaseWeapon weapon)
     {
+        foreach (var _weapon in _weapons)
+        {
+            if(weapon.Type == _weapon.Type)
+            {
+                _weapon.UpgradeWeapon(weapon, _weapon.Damage);
+                return;
+            }
+        }
+
         _weapons.Add(weapon);
     }
 

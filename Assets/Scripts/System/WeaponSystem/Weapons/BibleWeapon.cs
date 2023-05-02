@@ -35,9 +35,17 @@ public class BibleWeapon : BaseWeapon
         {
             if(enemy.TryGetComponent(out Enemy enemyUnit))
             {
-                enemyUnit._unitHealth.TakeDamage(10f);
+                enemyUnit._unitHealth.TakeDamage(Damage);
                 Debug.Log(enemyUnit._unitHealth.CurrentHealth);
             }
         }
+    }
+
+    public override void UpgradeWeapon(BaseWeapon weapon, float upgradeDamagePoints)
+    {
+        positionX = center.position.x + Mathf.Cos(angle) * radius + 180f;
+        positionY = center.position.y + Mathf.Sin(angle) * radius + 180f;
+
+        weapon.transform.position = new Vector2(-positionX, -positionY);
     }
 }
